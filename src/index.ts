@@ -4,9 +4,12 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import helmet from "helmet"
 import morgan from "morgan";
+import { authMiddleware } from "./middleware/authMiddleware"
 
 // ROUTE IMPORT
 console.log('🚀  Starting Express app from src/index.ts');
+import tenantRoutes from "./routes/tenantRoutes";
+import ManagerRoutes from "./routes/managerRoutes";
 
 
 // CONFIG
@@ -24,7 +27,10 @@ app.use(cors())
 app.get('/', (req, res) => {
     console.log("🔥 HIT /");
     res.send("this is home page");
-})
+});
+
+app.use("/tenants", authMiddleware(["tenant"]), tenantRoutes);
+app.use("/managers", authMiddleware(["manager"]), ManagerRoutes);
 
 // SERVER
 const port = process.env.PORT || 3002

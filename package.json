@@ -18,6 +18,7 @@
     "@aws-sdk/lib-storage": "^3.804.0",
     "@prisma/client": "^6.7.0",
     "@terraformer/wkt": "^2.2.1",
+    "@types/jsonwebtoken": "^9.0.9",
     "axios": "^1.9.0",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
@@ -32,7 +33,6 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
-    "@types/jsonwebtoken": "^9.0.9",
     "@types/morgan": "^1.9.9",
     "@types/multer": "^1.4.12",
     "@types/node": "^22.15.14",
