@@ -3,9 +3,9 @@ import {
   getTenant,
   createTenant,
   updateTenant,
-//   getCurrentResidences,
-//   addFavoriteProperty,
-//   removeFavoriteProperty,
+  //   getCurrentResidences,
+  //   addFavoriteProperty,
+  //   removeFavoriteProperty,
 } from "../controllers/tenantControllers";
 
 const router = express.Router();

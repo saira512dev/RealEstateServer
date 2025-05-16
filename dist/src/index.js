@@ -11,7 +11,7 @@ const helmet_1 = __importDefault(require("helmet"));
 const morgan_1 = __importDefault(require("morgan"));
 const authMiddleware_1 = require("./middleware/authMiddleware");
 // ROUTE IMPORT
-console.log('🚀  Starting Express app from src/index.ts');
+console.log("🚀  Starting Express app from src/index.ts");
 const tenantRoutes_1 = __importDefault(require("./routes/tenantRoutes"));
 const managerRoutes_1 = __importDefault(require("./routes/managerRoutes"));
 // CONFIG
@@ -25,7 +25,7 @@ app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: false }));
 app.use((0, cors_1.default)());
 // ROUTES
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
     console.log("🔥 HIT /");
     res.send("this is home page");
 });

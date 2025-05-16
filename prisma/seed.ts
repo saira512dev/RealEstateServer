@@ -49,7 +49,7 @@ async function resetSequence(modelName: string) {
   await prisma.$executeRaw(
     Prisma.raw(`
     SELECT setval(pg_get_serial_sequence('${quotedModelName}', 'id'), coalesce(max(id)+1, ${nextId}), false) FROM ${quotedModelName};
-  `)
+  `),
   );
   console.log(`Reset sequence for ${modelName} to ${nextId}`);
 }
@@ -96,7 +96,7 @@ async function main() {
     const filePath = path.join(dataDirectory, fileName);
     const jsonData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
     const modelName = toPascalCase(
-      path.basename(fileName, path.extname(fileName))
+      path.basename(fileName, path.extname(fileName)),
     );
     const modelNameCamel = toCamelCase(modelName);
 

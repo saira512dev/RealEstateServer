@@ -3,9 +3,9 @@ import {
   getManager,
   createManager,
   updateManager,
-//   getCurrentResidences,
-//   addFavoriteProperty,
-//   removeFavoriteProperty,
+  //   getCurrentResidences,
+  //   addFavoriteProperty,
+  //   removeFavoriteProperty,
 } from "../controllers/managerControllers";
 
 const router = express.Router();

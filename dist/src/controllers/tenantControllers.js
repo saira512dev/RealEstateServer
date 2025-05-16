@@ -18,8 +18,8 @@ const getTenant = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const tenant = yield prisma.tenant.findUnique({
             where: { cognitoId },
             include: {
-                favorites: true
-            }
+                favorites: true,
+            },
         });
         if (tenant) {
             res.json(tenant);
@@ -29,7 +29,9 @@ const getTenant = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }
     }
     catch (error) {
-        res.status(500).json({ message: `Error retrieving tenant: ${error.message}` });
+        res
+            .status(500)
+            .json({ message: `Error retrieving tenant: ${error.message}` });
     }
 });
 exports.getTenant = getTenant;
@@ -42,7 +44,9 @@ const createTenant = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         res.status(201).json(tenant);
     }
     catch (error) {
-        res.status(500).json({ message: `Error creating tenant: ${error.message}` });
+        res
+            .status(500)
+            .json({ message: `Error creating tenant: ${error.message}` });
     }
 });
 exports.createTenant = createTenant;
@@ -57,7 +61,9 @@ const updateTenant = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         res.json(updatedTenant);
     }
     catch (error) {
-        res.status(500).json({ message: `Error updating tenant: ${error.message}` });
+        res
+            .status(500)
+            .json({ message: `Error updating tenant: ${error.message}` });
     }
 });
 exports.updateTenant = updateTenant;

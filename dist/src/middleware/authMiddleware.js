@@ -18,7 +18,7 @@ const authMiddleware = (allowedRoles) => {
             const userRole = decoded["custom:role"] || "";
             req.user = {
                 id: decoded.sub,
-                role: userRole
+                role: userRole,
             };
             const hasAccess = allowedRoles.includes(userRole.toLowerCase());
             if (!hasAccess) {
